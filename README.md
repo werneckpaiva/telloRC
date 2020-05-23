@@ -21,7 +21,7 @@ The communication between ATmega2560 and ESP8266 module is made by one of the se
 
 The FlySky iBus receiver uses 2 serial communications, one for the channels and another for the telemetry. Honestly, I would prefer a single serial full duplex communication for both data and telemetry, but it's not the case. To make it even more complex, the telemetry uses only one pin on a half-duplex communication, so it requires to 'join' the rx and tx with a resistor. If you want to read more, refer to [this post](https://github.com/betaflight/betaflight/wiki/Single-wire-FlySky-(IBus)-telemetry). 
 
-Maybe there is an smarter way to do that using only one serial, but I didn't figure out yet. Feel free to contribute if you know how to improve.
+Maybe there is an smarter way to do that using only one serial, but I didn't figure out yet. Feel free to contribute if you know how to improve. 
 
 ![Circuit schema](/page/schema.png)
 
@@ -47,7 +47,7 @@ It also reads stats from the UDP port 8890. The stats come serialized as a strin
 
 It reads the RC channels from the serial interface and it writes the stats back.
 
-To upload the code to the Arduino Mega + ESP8266 you need to set the switches as (1: on, 2: on, 3: on, 4: on, 5: off, 6: off, 7: off, 8: off).
+To upload the code to the Arduino Mega + ESP8266 you need to set the switches as (1: off, 2: off, 3: off, 4: off, 5: on, 6: on, 7: on, 8: off).
 
 # What to do next?
 This solution only controls the Tello drone gimbals. It would be nice to stream the video to some kind of goggles, but as I don't have one, I have no idea on how to do it.
