@@ -44,7 +44,7 @@ void loop() {
 //    debugSerial.print(", ");
   }
 //  debugSerial.println("");
-  delay(5);
+  delay(10);
 } 
 
 void serialEvent3() {
