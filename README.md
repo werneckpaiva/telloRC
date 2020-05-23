@@ -54,4 +54,4 @@ This solution only controls the Tello drone gimbals. It would be nice to stream 
 
 ## Conclusion
 
-I tested this solution in an indoor environment. The RC range is much higher than the regular range of your phone wifi, but I don't know the range of the ESP8622 itself. It can be used with an external antenna that may increase the distance. 
+I tested this solution in an indoor environment. The RC range is much higher than the regular range of your phone wifi, but I don't know the range of the ESP8622 itself. It can be used with an external antenna that may increase the distance. Keep in mind that if you are bringing the arduino with you (while walking for instance) the range to be condifered is the wi-fi provided by the ESP8622 module, not by the RC controller.
