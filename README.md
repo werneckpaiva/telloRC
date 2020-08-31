@@ -4,7 +4,7 @@ Project to control Tello drone using FlySKY Radio Controller instead of your cel
 ![Tello, FlySky transmitter and Arduino board](/page/project.jpg)
 
 ## Why am I using an Arduino ATmega2560+ESP8266?
-This project requires 2 serial ports: one to receive data from the receiver (the channels) and another to send the battery status to the transmitter (the RC Control). It also needs wi-fi capabilities to communicate with Tello. 
+This project requires 2 serial ports: one to receive data from the receiver (the channels) and another to send the battery status to the transmitter (the RC Control). It also needs wi-fi capabilities to communicate with Tello.
 
 I found the Arduino ATmega2560+ESP8266 board a perfect match for the project. It comes with 4 serial UART interfaces and the ESP8266 wi-fi module. The full board operates at 5v, wich is the Arduino standard, instead of the 3v from the ESP8266. It's also inexpensive (https://banggood.app.link/Qb9GWZ8nH6). The drawback is the USB serial communication that uses multiple switches to select which one you want to control. So, the development process requires a lot of physical switches changes.
 
@@ -19,9 +19,9 @@ The communication between ATmega2560 and ESP8266 module is made by one of the se
 
 ## Circuit
 
-The FlySky iBus receiver uses 2 serial communications, one for the channels and another for the telemetry. Honestly, I would prefer a single serial full duplex communication for both data and telemetry, but it's not the case. To make it even more complex, the telemetry uses only one pin on a half-duplex communication, so it requires to 'join' the rx and tx with a resistor. If you want to read more, refer to [this post](https://github.com/betaflight/betaflight/wiki/Single-wire-FlySky-(IBus)-telemetry). 
+The FlySky iBus receiver uses 2 serial communications, one for the channels and another for the telemetry. Honestly, I would prefer a single serial full duplex communication for both data and telemetry, but it's not the case. To make it even more complex, the telemetry uses only one pin on a half-duplex communication, so it requires to 'join' the rx and tx with a resistor. If you want to read more, refer to [this post](https://github.com/betaflight/betaflight/wiki/Single-wire-FlySky-(IBus)-telemetry).
 
-Maybe there is an smarter way to do that using only one serial, but I didn't figure out yet. Feel free to contribute if you know how to improve. 
+Maybe there is an smarter way to do that using only one serial, but I didn't figure out yet. Feel free to contribute if you know how to improve.
 
 ![Circuit schema](/page/schema.png)
 
@@ -49,7 +49,11 @@ It reads the RC channels from the serial interface and it writes the stats back.
 
 To upload the code to the Arduino Mega + ESP8266 you need to set the switches as (1: off, 2: off, 3: off, 4: off, 5: on, 6: on, 7: on, 8: off).
 
-# What to do next?
+## See it working
+
+![Video of RC controller working](/page/tello_rc.gif)
+
+## What to do next?
 This solution only controls the Tello drone gimbals. It would be nice to stream the video to some kind of goggles, but as I don't have one, I have no idea on how to do it.
 
 ## Conclusion
